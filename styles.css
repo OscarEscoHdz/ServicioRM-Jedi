@@ -1,0 +1,134 @@
+/* Reseteo básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    /* Color de fondo basado en el flyer */
+    background-color: #1b1664; 
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Encabezado */
+header {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: linear-gradient(to bottom, #100d3d, #1b1664);
+    border-bottom: 2px solid #3c35b5;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #a3a0e7; /* Un tono de azul más claro para resaltar */
+}
+
+/* Secciones de Servicios */
+.services-section {
+    padding: 2rem 5%;
+    text-align: center;
+}
+
+.services-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid white;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+/* Contenedor de Tarjetas (Responsive usando CSS Grid) */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* Diseño de cada Tarjeta */
+.card {
+    background-color: #272186; /* Azul un poco más claro que el fondo */
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efecto al pasar el mouse */
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.card h3 {
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.card p {
+    color: #d1cff2;
+    font-size: 0.95rem;
+}
+
+/* Sección de Ubicación y Contacto */
+.location-contact {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem 5%;
+    gap: 2rem;
+    background-color: #100d3d;
+}
+
+.location, .contact {
+    flex: 1 1 300px; /* Hace que se dividan en 50/50 en pantallas grandes */
+}
+
+.contact h2, .location h2 {
+    margin-bottom: 1rem;
+}
+
+.contact p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Botón de WhatsApp */
+#btn-whatsapp {
+    background-color: #25D366; /* Color oficial de WhatsApp */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#btn-whatsapp:hover {
+    background-color: #1da851;
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #0b0928;
+    color: #8c89c7;
+    font-size: 0.9rem;
+}
