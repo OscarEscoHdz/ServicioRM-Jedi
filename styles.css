@@ -98,6 +98,38 @@ header h1 {
     flex: 1 1 300px; /* Hace que se dividan en 50/50 en pantallas grandes */
 }
 
+/* =========================================
+   Corrección responsiva para el Mapa (Iframe)
+   ========================================= */
+
+/* Aseguramos que el contenedor no sobrepase el ancho de la pantalla */
+.location {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* Forzamos al mapa a respetar el 100% de su contenedor */
+.location iframe {
+    width: 100% !important;
+    max-width: 100%;
+    height: 300px; /* Puedes ajustar la altura si lo deseas */
+    display: block; /* Evita espacios en blanco debajo del iframe */
+}
+
+/* Ajuste adicional para pantallas pequeñas (celulares) */
+@media (max-width: 768px) {
+    .location-contact {
+        padding: 2rem 1rem; /* Reducimos los márgenes laterales en celulares para que el mapa se vea más grande */
+        flex-direction: column; /* Forzamos a que el mapa quede arriba y el contacto abajo */
+    }
+    
+    .location, .contact {
+        width: 100%;
+        flex: none; /* Quitamos el flex-basis para que tomen todo el ancho */
+    }
+}
+
 .contact h2, .location h2 {
     margin-bottom: 1rem;
 }
@@ -131,4 +163,69 @@ footer {
     background-color: #0b0928;
     color: #8c89c7;
     font-size: 0.9rem;
+}
+
+
+/* =========================================
+   Estilos para el Carrusel de Imágenes
+   ========================================= */
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 180px; /* Mantiene la misma altura que las imágenes anteriores */
+    overflow: hidden;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.carousel-images {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-images img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0; /* Oculta todas las imágenes por defecto */
+    transition: opacity 0.5s ease-in-out; /* Animación de desvanecimiento suave */
+    margin-bottom: 0; 
+}
+
+/* Solo la imagen con la clase "active" será visible */
+.carousel-images img.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+/* Botones del carrusel */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    z-index: 2;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.carousel-btn.prev {
+    left: 5px; /* Pega el botón izquierdo al borde */
+}
+
+.carousel-btn.next {
+    right: 5px; /* Pega el botón derecho al borde */
 }
